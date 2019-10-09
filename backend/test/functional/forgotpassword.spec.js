@@ -73,7 +73,7 @@ test('it cannot reset password after 2h of forgot password request', async ({
     type: 'forgotpassword',
   });
 
-  user.tokens().save(userToken);
+  await user.tokens().save(userToken);
 
   const dateWithSub = format(subHours(new Date(), 3), 'yyyy-MM-dd HH:ii:ss');
 
